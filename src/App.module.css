@@ -4,14 +4,14 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    color: rgb(0, 0, 0);
-    background: #ffffff; 
+    color: white;
+    background: #000; 
     transition: background 0.5s ease;
   }
   body {
     background-color: rgb(34, 32, 32);
     min-height: 100vh;
-    color: white;
+    color: white !important;
     margin: 0;
     font-family: Arial, sans-serif;
     background-attachment: fixed;
