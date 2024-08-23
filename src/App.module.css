@@ -8,14 +8,14 @@
     background: #000; 
     transition: background 0.5s ease;
   }
-  body {
+  /* body {
     background-color: rgb(34, 32, 32);
     min-height: 100vh;
     color: white !important;
     margin: 0;
     font-family: Arial, sans-serif;
     background-attachment: fixed;
-  }
+  } */
   .contentContainer {
     display: flex;
     flex: 1;
