@@ -1,9 +1,9 @@
 .Container {
   width: 432px;
-  /* height: 350px; */
-  /* position: relative; */
-  /* top: -80px; */
-  /* left: 280px; */
+  height: 350px;
+  position: relative;
+  top: -80px;
+  left: 100px;
 }
 .header {
   display: flex;
