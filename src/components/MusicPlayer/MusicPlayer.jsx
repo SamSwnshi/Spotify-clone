@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { FastAverageColor } from 'fast-average-color';
-import styles from './MusicPlayer.module.css';
-import dot from '../../assets/Group 7.png';
-import sound from '../../assets/Frame.png';
-import pre from '../../assets/Vector.png';
-import play from '../../assets/Vector (2).png';
-import pause from '../../assets/Frame 32.png';
-import next from '../../assets/Vector (7).png';
+import React, { useState, useRef, useEffect } from "react";
+import { FastAverageColor } from "fast-average-color";
+import styles from "./MusicPlayer.module.css";
+import dot from "../../assets/Group 7.png";
+import sound from "../../assets/Frame.png";
+import pre from "../../assets/Vector.png";
+import play from "../../assets/Vector (2).png";
+import pause from "../../assets/Frame 32.png";
+import next from "../../assets/Vector (7).png";
 
 const MusicPlayer = ({ currentSong, appContainerRef }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [backgroundColor, setBackgroundColor] = useState('#000');
+  const [backgroundColor, setBackgroundColor] = useState("#000");
   const audioRef = useRef(null);
   const fac = new FastAverageColor();
 
@@ -26,12 +26,15 @@ const MusicPlayer = ({ currentSong, appContainerRef }) => {
         setDuration(audioRef.current.duration);
       };
 
-      audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
-      audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
+      audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
+      audioRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
 
       return () => {
-        audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
-        audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
+        audioRef.current.removeEventListener(
+          "loadedmetadata",
+          handleLoadedMetadata
+        );
       };
     }
   }, [currentSong]);
@@ -72,17 +75,17 @@ const MusicPlayer = ({ currentSong, appContainerRef }) => {
   };
 
   const handleNext = () => {
-    console.log('Next song');
+    console.log("Next song");
   };
 
   const handlePrevious = () => {
-    console.log('Previous song');
+    console.log("Previous song");
   };
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
   return (
@@ -94,7 +97,11 @@ const MusicPlayer = ({ currentSong, appContainerRef }) => {
             <div className={styles.songArtist}>{currentSong.artist}</div>
           </div>
           <div className={styles.albumArtContainer}>
-            <img src={`https://cms.samespace.com/assets/${currentSong.cover}`} alt={currentSong.name} className={styles.albumArt} />
+            <img
+              src={`https://cms.samespace.com/assets/${currentSong.cover}`}
+              alt={currentSong.name}
+              className={styles.albumArt}
+            />
           </div>
 
           <div className={styles.seekerContainer}>
@@ -115,13 +122,33 @@ const MusicPlayer = ({ currentSong, appContainerRef }) => {
               <img src={dot} alt="dot" />
             </div>
             <div className={styles.icns}>
-              <img src={pre} alt="Previous" className={styles.controlIcon} onClick={handlePrevious} />
+              <img
+                src={pre}
+                alt="Previous"
+                className={styles.controlIcon}
+                onClick={handlePrevious}
+              />
               {isPlaying ? (
-                <img src={pause} alt="Pause" className={styles.controlIcon} onClick={handlePlayPause} />
+                <img
+                  src={pause}
+                  alt="Pause"
+                  className={styles.controlIcon}
+                  onClick={handlePlayPause}
+                />
               ) : (
-                <img src={play} alt="Play" className={styles.controlIcon} onClick={handlePlayPause} />
+                <img
+                  src={play}
+                  alt="Play"
+                  className={styles.controlIcon}
+                  onClick={handlePlayPause}
+                />
               )}
-              <img src={next} alt="Next" className={styles.controlIcon} onClick={handleNext} />
+              <img
+                src={next}
+                alt="Next"
+                className={styles.controlIcon}
+                onClick={handleNext}
+              />
             </div>
             <div>
               <img

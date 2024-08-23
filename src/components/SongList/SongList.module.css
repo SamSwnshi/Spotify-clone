@@ -5,7 +5,7 @@
     top: -53px;;
     left: 280px;
     gap: 0px;
-    opacity: 0px;
+    
 
   }
   .header{
@@ -20,7 +20,7 @@
 gap: 0px;
 border-radius: 8px 0px 0px 0px;
 justify-content: space-between;
-opacity: 0px;
+
 
   }
   
@@ -43,13 +43,13 @@ opacity: 0px;
     cursor: pointer;
     margin-left: -40px;
     border-radius: 8px;
-    opacity: 0.7;
+    
   }
 .songListContainer{
     width: 432px;
     height: 550px;
     gap: 0px;
-    opacity: 0px;
+    
     overflow-y: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
