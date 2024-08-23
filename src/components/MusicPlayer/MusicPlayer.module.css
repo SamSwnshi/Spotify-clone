@@ -1,13 +1,13 @@
 .playerContainer {
- width: 480px;
-height: 692.24px;
-position: relative;
-top: -399px;
+ /* width: 480px;
+height: 692.24px; */
+/* position: relative; */
+/* top: -399px;
 left: 874px;
-gap: 32px;
+gap: 32px; */
 
  color: #fff;
- padding: 20px;
+ /* padding: 20px; */
  border-radius: 10px;
   }
   .icns{
@@ -24,7 +24,7 @@ gap: 32px;
     width: 380px;
    height: 380px;
    gap: 0px;
-   border-radius: 8px 0px 0px 0px;
+   border-radius: 8px;
    
 
   }
