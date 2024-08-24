@@ -7,6 +7,7 @@ import pre from "../../assets/Vector.png";
 import play from "../../assets/Vector (2).png";
 import pause from "../../assets/Frame 32.png";
 import next from "../../assets/Vector (7).png";
+import { FaVolumeMute } from "react-icons/fa";
 
 const MusicPlayer = ({ currentSong, appContainerRef }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -103,7 +104,6 @@ const MusicPlayer = ({ currentSong, appContainerRef }) => {
               className={styles.albumArt}
             />
           </div>
-
           <div className={styles.seekerContainer}>
             <input
               type="range"
@@ -116,49 +116,50 @@ const MusicPlayer = ({ currentSong, appContainerRef }) => {
             <div className={styles.timeInfo}>
               <span>{formatTime(currentTime)}</span>
             </div>
-          </div>
-          <div className={styles.controls}>
-            <div>
-              <img src={dot} alt="dot" />
-            </div>
-            <div className={styles.icns}>
-              <img
-                src={pre}
-                alt="Previous"
-                className={styles.controlIcon}
-                onClick={handlePrevious}
-              />
-              {isPlaying ? (
+            <div className={styles.controls}>
+              <div>
+                <img src={dot} alt="dot" />
+              </div>
+              <div className={styles.icns}>
                 <img
-                  src={pause}
-                  alt="Pause"
+                  src={pre}
+                  alt="Previous"
                   className={styles.controlIcon}
-                  onClick={handlePlayPause}
+                  onClick={handlePrevious}
                 />
-              ) : (
+                {isPlaying ? (
+                  <img
+                    src={pause}
+                    alt="Pause"
+                    className={styles.controlIcon}
+                    onClick={handlePlayPause}
+                  />
+                ) : (
+                  <img
+                    src={play}
+                    alt="Play"
+                    className={styles.controlIcon}
+                    onClick={handlePlayPause}
+                  />
+                )}
                 <img
-                  src={play}
-                  alt="Play"
+                  src={next}
+                  alt="Next"
                   className={styles.controlIcon}
-                  onClick={handlePlayPause}
+                  onClick={handleNext}
                 />
-              )}
-              <img
-                src={next}
-                alt="Next"
-                className={styles.controlIcon}
-                onClick={handleNext}
-              />
-            </div>
-            <div>
-              <img
-                src={isMuted ? sound : sound}
-                alt="Sound"
-                onClick={handleMute}
-                className={styles.soundIcon}
-              />
+              </div>
+              <div>
+                <img
+                  src={isMuted ? sound : sound}
+                  alt="Sound"
+                  onClick={handleMute}
+                  className={styles.soundIcon}
+                />
+              </div>
             </div>
           </div>
+
           <audio ref={audioRef} src={currentSong.url} />
         </>
       ) : (

@@ -1,7 +1,7 @@
 .appContainer {
      display: flex; 
      flex-direction: column; 
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     color: white;
@@ -28,11 +28,43 @@
     display: flex;
     flex: 1;
   }
-  
-  @media (max-width: 768px) {
-    .contentContainer {
+
+  /* @media (max-width: 1025px) { */
+    /* .contentContainer {
       flex-direction: column;
       gap: 2rem;
+    } */
+
+    /* .wrapper { */
+      /* width: 100%; */
+      /* display: flex; */
+      /* justify-content: space-around; */
+      /* gap: 120px; */
+    /* } */
+  /* }  */
+
+  @media (max-width: 768px){
+    .wrapper{
+      display: flex;
+      justify-content: space-around;
     }
   }
-  
+
+
+  @media (max-width: 426px){
+    .wrapper{
+      display: flex;
+      /* justify-content: space-around; */
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .wrapper{
+      width: 50vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+ 
